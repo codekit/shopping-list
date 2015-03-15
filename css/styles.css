@@ -28,7 +28,7 @@ h1 {
     letter-spacing: 3px;
 }
 
-.row {
+#items {
     margin-top: 5em;
 }
 
@@ -52,8 +52,7 @@ h1 {
 input#add {
     width: 100px;
     height: 42px;
-    /*    margin-top: 29px;*/
-    
+    margin-top: 0;
     border: 1px solid #F7A45E;
     background-color: #EDAC75;
     color: #fff;
@@ -88,20 +87,28 @@ ul.list {
     padding-left: 0.5em;
 }
 
+.listItem span {
+    cursor: pointer;
+}
+
+input[type=checkbox] {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.checked {
+    text-decoration: line-through;
+}
+
 .del {
-    background: url('../assets/del1.png') no-repeat;
+    background: url('../assets/delete.png') no-repeat;
     height: 30px;
     display: inline-block;
     position: absolute;
-    top: 7px;
+    top: 10px;
     left: 374px;
-    padding: 1em;
-}
-
-@media only screen and (min-width: 992px) {
-    input#add {
-        margin-top: 29px;
-    }
+    padding: 0.1em 2em 2em;
+    cursor: pointer;
 }
 /* For Tablets */
 
@@ -122,6 +129,9 @@ ul.list {
     h1 {
         font-size: 3.2em;
     }
+    #items {
+        margin-top: 0
+    }
     #addItem,
     #qty {
         width: 230px;
@@ -137,7 +147,7 @@ ul.list {
     .listItem {
         font-size: 1.4em;
         width: 360px;
-        margin: 7px 0 0 -35px;
+        margin: 3px 0 0 -35px;
     }
     .del {
         top: 5px;

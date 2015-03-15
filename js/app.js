@@ -12,16 +12,29 @@ $(document).ready(function () {
             $('#addItem').focus();
         };
     });
+
     $('.list').on('click', 'div.del', deleteItems);
+    $('.list').on('click', 'span.item', function () {
+        console.log("checked out");
+        $(this).toggleClass("checked");
+    });
 
     function addItems(item, qty) {
-        $('<li class="listItem"><span class="item">' + qty + ' ' + item + '</span><div class="del"></div></li>').hide().prependTo('.list').slideDown('slow');
-
+        var newItem = "<li class='listItem'>" + "<span  class='item'>" + qty + ' ' + item + "</span>" + "<div class='del'></div>" + "</li>";
+        $(newItem).prependTo('.list').slideDown('slow');
     }
 
     function deleteItems() {
-        $(this).parent().slideUp('slow', function () {
-            $(this).remove();
-        });
+        console.log("deleted");
+        if ($(this).siblings().hasClass("checked")) {
+
+            $(this).parent().slideUp('fast', function () {
+                $(this).remove();
+            });
+        } else {
+            $(this).parent().slideUp('fast', function () {
+                $(this).remove();
+            });
+        }
     }
 });
