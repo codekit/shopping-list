@@ -47,6 +47,7 @@ h1 {
     width: 267px;
     border: 1px solid rgba(189, 128, 48, 0.45);
     height: 42px;
+    padding: 0 10px
 }
 
 input#add {
